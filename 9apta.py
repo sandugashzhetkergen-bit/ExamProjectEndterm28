@@ -10,7 +10,7 @@ class ReportAnalyzer:
         cols = self.data.select_dtypes(include="number").columns[:3]
         means={}
         for c in cols:
-            means[c]=round(self.data[c].mean(),2)
+            means[c] = float(round(self.data[c].mean(), 2))
         return means
 if __name__=="__main__":
     print("Zhetkergen Sandugash")

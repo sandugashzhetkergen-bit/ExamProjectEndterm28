@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-class ReportAnalyzer:
+class ChartBuilder:
     def __init__(self, path):
         self.path = path
         self.data = None
@@ -35,14 +35,3 @@ class ReportAnalyzer:
         plt.plot(self.data[col])
         self.style("Graph 3", "Index", col)
         plt.show()
-
-
-if __name__ == "__main__":
-    print("Zhetkergen Sandugash")
-
-    ra = ReportAnalyzer("report.csv")
-    ra.load()
-
-    ra.graph1()
-    ra.graph2()
-    ra.graph3()

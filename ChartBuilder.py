@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
 class ChartBuilder:
     def __init__(self, path):
         self.path = path

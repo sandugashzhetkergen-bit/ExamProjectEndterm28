@@ -25,4 +25,23 @@ rs.load()
 summary = rs.get_summary()
 print(summary)
 
+from ManifestBuilder import ManifestBuilder
+print("Zhetkergen Sandugash")
+mb = ManifestBuilder()
+result = mb.get_file_info()
+print(result)
+if __name__ == "__main__":
+    print("Zhetkergen Sandugash")
 
+# #13 апта
+# from FigureSaver import FigureSaver
+# print("Zhetkergen Sandugash")
+#
+# fs = FigureSaver("report.csv")
+# fs.load()
+#
+# fs.save_hist()
+# fs.save_box()
+# fs.save_scatter()
+# if __name__ == "__main__":
+#     print("Zhetkergen Sandugash")

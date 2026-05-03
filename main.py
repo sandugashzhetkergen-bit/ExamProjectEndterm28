@@ -45,3 +45,10 @@ fs.save_box()
 fs.save_scatter()
 if __name__ == "__main__":
     print("Zhetkergen Sandugash")
+
+from ApiService14 import ApiService14
+
+print("Zhetkergen Sandugash")
+
+api = ApiService14()
+api.run()

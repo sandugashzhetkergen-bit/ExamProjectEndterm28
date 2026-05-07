@@ -1,3 +1,4 @@
+#9
 from ChartBuilder import ChartBuilder
 from ReportAnalyzer import ReportAnalyzer
 if __name__=="__main__":
@@ -6,7 +7,7 @@ if __name__=="__main__":
     ra.load()
     result=ra.calc_mean()
     print(result)
-
+# 10
 from ChartBuilder import ChartBuilder
 if __name__ == "__main__":
     print("Zhetkergen Sandugash")
@@ -16,7 +17,7 @@ cb.load()
 cb.graph1()
 cb.graph2()
 cb.graph3()
-
+#11
 from ReportSummary import ReportSummary
 if __name__ == "__main__":
     print("Zhetkergen Sandugash")
@@ -24,7 +25,7 @@ rs = ReportSummary("report.csv")
 rs.load()
 summary = rs.get_summary()
 print(summary)
-
+#12
 from ManifestBuilder import ManifestBuilder
 print("Zhetkergen Sandugash")
 mb = ManifestBuilder()
@@ -45,11 +46,9 @@ fs.save_box()
 fs.save_scatter()
 if __name__ == "__main__":
     print("Zhetkergen Sandugash")
-
-from ApiService14 import ApiService14
-
-print("Zhetkergen Sandugash")
-
+#14
+from ReportAPI import ReportAPI
 if __name__ == "__main__":
-    api = ApiService14()
-    api.run()
+    print("Zhetkergen Sandugash")
+    api = ReportAPI()
+    api.run(port=5001)

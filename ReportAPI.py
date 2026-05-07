@@ -1,13 +1,13 @@
 from flask import Flask, jsonify, send_file, request
 import json
 
+
 class ReportAPI:
     def __init__(self):
         self.app = Flask(__name__)
         self.routes()
 
     def routes(self):
-
         @self.app.route("/manifest")
         def manifest():
             with open("manifest.json") as f:
@@ -16,15 +16,10 @@ class ReportAPI:
         @self.app.route("/fig")
         def fig():
             n = request.args.get("n")
+            files = {"1": "fig1.png", "2": "fig2.png", "3": "fig3.png"}
+            if n in files:
+                return send_file(files[n], mimetype="image/png")
+            return jsonify({"error": "wrong number, use ?n=1, 2 or 3"}), 400
 
-            if n == "1":
-                return send_file("fig1.png", mimetype="image/png")
-            elif n == "2":
-                return send_file("fig2.png", mimetype="image/png")
-            elif n == "3":
-                return send_file("fig3.png", mimetype="image/png")
-            else:
-                return {"error": "wrong number"}
-
-    def run(self):
-        self.app.run(debug=True, port=5001)
+    def run(self, port=5001):
+        self.app.run(debug=True, port=port)

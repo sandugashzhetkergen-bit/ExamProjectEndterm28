@@ -1,27 +1,30 @@
-from flask import Flask, send_file, jsonify, request
-from pathlib import Path
+from flask import Flask, jsonify, send_file, request
+import json
 
-
-class ApiService14:
+class ReportAPI:
     def __init__(self):
         self.app = Flask(__name__)
-        self.files = ["hist.png", "box.png", "scatter.png"]
-        self.setup_routes()
+        self.routes()
 
-    def setup_routes(self):
+    def routes(self):
+
         @self.app.route("/manifest")
         def manifest():
-            return jsonify(self.files)
+            with open("manifest.json") as f:
+                return jsonify(json.load(f))
 
         @self.app.route("/fig")
         def fig():
-            n = int(request.args.get("n", 1))
-            filename = self.files[n - 1]
+            n = request.args.get("n")
 
-            if not Path(filename).exists():
-                return {"error": f"{filename} not found"}, 404
-
-            return send_file(filename, mimetype="image/png")
+            if n == "1":
+                return send_file("fig1.png", mimetype="image/png")
+            elif n == "2":
+                return send_file("fig2.png", mimetype="image/png")
+            elif n == "3":
+                return send_file("fig3.png", mimetype="image/png")
+            else:
+                return {"error": "wrong number"}
 
     def run(self):
-        self.app.run(debug=True)
+        self.app.run(debug=True, port=5001)

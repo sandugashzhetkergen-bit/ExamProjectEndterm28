@@ -1,7 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
-
 class FigureSaver:
     def __init__(self, path):
         self.path = path

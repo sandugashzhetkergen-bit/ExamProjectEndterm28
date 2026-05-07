@@ -28,7 +28,7 @@ print(summary)
 from ManifestBuilder import ManifestBuilder
 print("Zhetkergen Sandugash")
 mb = ManifestBuilder()
-result = mb.get_file_info()
+result = mb.build()
 print(result)
 if __name__ == "__main__":
     print("Zhetkergen Sandugash")

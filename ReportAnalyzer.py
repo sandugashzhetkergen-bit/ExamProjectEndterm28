@@ -12,10 +12,4 @@ class ReportAnalyzer:
         for c in cols:
             means[c] = float(round(self.data[c].mean(), 2))
         return means
-if __name__=="__main__":
-    print("Zhetkergen Sandugash")
-    ra = ReportAnalyzer("report.csv")
-    ra.load()
-    result=ra.calc_mean()
-    print(result)
 
